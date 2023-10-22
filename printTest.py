@@ -1,3 +1,3 @@
 print ('yankees rule!')
 print ('but not in Boston')
-print ('yankees rule')
+print ('yankees rule', 'but not in Boston')
