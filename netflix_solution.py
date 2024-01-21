@@ -2,22 +2,22 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Read in the Netflix CSV as a DataFrame
+# Read in the Netflix CSV 
 netflix_df = pd.read_csv("netflix_data.csv")
 
-# Subset the DataFrame for type "Movie"
+# Filter to movies
 netflix_subset = netflix_df[netflix_df["type"] == "Movie"]
 
-# Select only the columns of interest
+# Filter to relevant columns
 netflix_movies = netflix_subset[["title", "country", "genre", "release_year", "duration"]]
 
-# Filter for durations shorter than 60 minutes
+# Filter to less than 60 minutes
 short_movies = netflix_movies[netflix_movies.duration < 60]
 
-# Define an empty list
+# Define an empty list (I don't recall this from class)
 colors = []
 
-# Iterate over rows of netflix_movies
+# Provide genre colors
 for label, row in netflix_movies.iterrows() :
     if row["genre"] == "Children" :
         colors.append("red")
@@ -28,10 +28,10 @@ for label, row in netflix_movies.iterrows() :
     else:
         colors.append("black")
         
-# Inspect the first 10 values in your list        
+# Check first 10     
 colors[:10]
 
-# Set the figure style and initalize a new figure
+# Gave up on the remainder.  Set the figure style and initalize a new figure
 fig = plt.figure(figsize=(12,8))
 
 # Create a scatter plot of duration versus release_year
